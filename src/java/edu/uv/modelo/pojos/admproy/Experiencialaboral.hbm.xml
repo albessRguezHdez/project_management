@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/05/2014 12:50:41 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="edu.uv.modelo.pojos.admproy.Experiencialaboral" table="experiencialaboral" catalog="administracion">
+        <id name="idexperienciaLaboral" type="java.lang.Integer">
+            <column name="idexperienciaLaboral" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="academico" class="edu.uv.modelo.pojos.admproy.Academico" fetch="select">
+            <column name="Academico_idAcademico" not-null="true" />
+        </many-to-one>
+        <property name="nomexperienciaLaboral" type="string">
+            <column name="NomexperienciaLaboral" length="40" not-null="true" />
+        </property>
+        <property name="institucion" type="string">
+            <column name="institucion" length="30" not-null="true" />
+        </property>
+        <property name="experienciaLaboralcol" type="string">
+            <column name="experienciaLaboralcol" length="40" not-null="true" />
+        </property>
+        <set name="datossintesises" table="datossintesis" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ExperienciaLaboral_idexperienciaLaboral" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Datossintesis" />
+        </set>
+    </class>
+</hibernate-mapping>

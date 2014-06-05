@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/05/2014 12:50:41 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="edu.uv.modelo.pojos.admproy.Datosactoacademico" table="datosactoacademico" catalog="administracion">
+        <id name="idActoAcademico" type="java.lang.Integer">
+            <column name="idActoAcademico" />
+            <generator class="identity" />
+        </id>
+        <property name="nomActoacademico" type="string">
+            <column name="NomActoacademico" length="50" not-null="true" />
+        </property>
+        <property name="modalidad" type="string">
+            <column name="modalidad" length="20" not-null="true" />
+        </property>
+        <property name="tipoActo" type="string">
+            <column name="tipoActo" length="20" not-null="true" />
+        </property>
+        <property name="nombreEntidadA" type="string">
+            <column name="nombreEntidadA" length="30" not-null="true" />
+        </property>
+        <property name="calleEntidadA" type="string">
+            <column name="calleEntidadA" length="30" not-null="true" />
+        </property>
+        <property name="numeroEntidad" type="int">
+            <column name="numeroEntidad" not-null="true" />
+        </property>
+        <property name="ciudadEntidadA" type="string">
+            <column name="ciudadEntidadA" length="30" not-null="true" />
+        </property>
+        <property name="correoEntidadA" type="string">
+            <column name="correoEntidadA" length="50" not-null="true" />
+        </property>
+        <property name="correoAlternativoEnt" type="string">
+            <column name="correoAlternativoEnt" length="50" />
+        </property>
+        <property name="areaAcademica" type="string">
+            <column name="areaAcademica" length="50" not-null="true" />
+        </property>
+        <property name="nombreSede" type="string">
+            <column name="nombreSede" length="35" not-null="true" />
+        </property>
+        <property name="calleSede" type="string">
+            <column name="calleSede" length="30" not-null="true" />
+        </property>
+        <property name="numeroSede" type="int">
+            <column name="numeroSede" not-null="true" />
+        </property>
+        <property name="telefonoSede" type="string">
+            <column name="telefonoSede" length="20" not-null="true" />
+        </property>
+        <property name="telefonoAltSede" type="string">
+            <column name="telefonoAltSede" length="20" />
+        </property>
+        <property name="cuotaRec" type="big_decimal">
+            <column name="cuotaRec" precision="4" not-null="true" />
+        </property>
+        <property name="cupoMin" type="int">
+            <column name="cupoMin" not-null="true" />
+        </property>
+        <property name="cupoMax" type="int">
+            <column name="cupoMax" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="fechaInicio" length="10" not-null="true" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fechaFin" length="10" not-null="true" />
+        </property>
+        <property name="numSesiones" type="int">
+            <column name="numSesiones" not-null="true" />
+        </property>
+        <property name="horario" type="string">
+            <column name="horario" length="20" not-null="true" />
+        </property>
+        <property name="totalHoras" type="int">
+            <column name="totalHoras" not-null="true" />
+        </property>
+        <property name="dirigido" type="string">
+            <column name="dirigido" length="100" />
+        </property>
+        <property name="requisitos" type="string">
+            <column name="requisitos" length="500" not-null="true" />
+        </property>
+        <property name="objetivo" type="string">
+            <column name="objetivo" length="400" not-null="true" />
+        </property>
+        <property name="acreditacion" type="string">
+            <column name="acreditacion" length="50" not-null="true" />
+        </property>
+        <property name="procedimientoEval" type="string">
+            <column name="procedimientoEval" length="500" not-null="true" />
+        </property>
+        <property name="bibliografia" type="string">
+            <column name="bibliografia" length="500" />
+        </property>
+        <property name="cartaC" type="java.lang.Integer">
+            <column name="cartaC" />
+        </property>
+        <property name="sintesisC" type="java.lang.Integer">
+            <column name="sintesisC" />
+        </property>
+        <property name="presupuesto" type="int">
+            <column name="presupuesto" not-null="true" />
+        </property>
+        <set name="datoscursos" table="datoscurso" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DatosActoAcademico_idActoAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Datoscurso" />
+        </set>
+        <set name="academicos" table="datosactoacademico_has_academico" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="DatosActoAcademico_idActoAcademico" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.uv.modelo.pojos.admproy.Academico">
+                <column name="Academico_idAcademico" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="datosevaluacions" table="datosevaluacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DatosActoAcademico_idActoAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Datosevaluacion" />
+        </set>
+    </class>
+</hibernate-mapping>

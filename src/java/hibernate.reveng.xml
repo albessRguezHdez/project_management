@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="administracion"/>
+  <table-filter match-name="datosalumno"/>
+  <table-filter match-name="distinciones"/>
+  <table-filter match-name="datosactoacademico_has_academico"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="experiencialaboral"/>
+  <table-filter match-name="datosevaluacion"/>
+  <table-filter match-name="experienciaacademica"/>
+  <table-filter match-name="idiomas"/>
+  <table-filter match-name="escolaridad"/>
+  <table-filter match-name="datossintesis"/>
+  <table-filter match-name="idiomas_has_academico1"/>
+  <table-filter match-name="datosactoacademico"/>
+  <table-filter match-name="datoscurso_has_datosalumno"/>
+  <table-filter match-name="datoscurso"/>
+  <table-filter match-name="academico"/>
+</hibernate-reverse-engineering>

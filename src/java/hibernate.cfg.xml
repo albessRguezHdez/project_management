@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/administracion?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">123456</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Academico.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Datosevaluacion.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Idiomas.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Datoscurso.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Escolaridad.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Distinciones.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Experienciaacademica.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Experiencialaboral.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Usuario.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Datossintesis.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Datosactoacademico.hbm.xml"/>
+    <mapping resource="edu/uv/modelo/pojos/admproy/Datosalumno.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

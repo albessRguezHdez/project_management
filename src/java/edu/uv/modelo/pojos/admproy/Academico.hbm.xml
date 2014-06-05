@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/05/2014 12:50:41 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="edu.uv.modelo.pojos.admproy.Academico" table="academico" catalog="administracion">
+        <id name="idAcademico" type="java.lang.Integer">
+            <column name="idAcademico" />
+            <generator class="identity" />
+        </id>
+        <property name="remunerado" type="int">
+            <column name="remunerado" not-null="true" />
+        </property>
+        <property name="tipoAcademico" type="int">
+            <column name="tipoAcademico" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="50" />
+        </property>
+        <set name="experienciaacademicas" table="experienciaacademica" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Experienciaacademica" />
+        </set>
+        <set name="escolaridads" table="escolaridad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Escolaridad" />
+        </set>
+        <set name="idiomases" table="idiomas_has_academico1" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.uv.modelo.pojos.admproy.Idiomas">
+                <column name="idiomas_idIdiomas" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="distincioneses" table="distinciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Distinciones" />
+        </set>
+        <set name="experiencialaborals" table="experiencialaboral" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Experiencialaboral" />
+        </set>
+        <set name="datossintesises" table="datossintesis" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <one-to-many class="edu.uv.modelo.pojos.admproy.Datossintesis" />
+        </set>
+        <set name="datosactoacademicos" table="datosactoacademico_has_academico" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Academico_idAcademico" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.uv.modelo.pojos.admproy.Datosactoacademico">
+                <column name="DatosActoAcademico_idActoAcademico" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

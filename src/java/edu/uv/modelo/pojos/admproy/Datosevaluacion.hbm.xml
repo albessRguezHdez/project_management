@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/05/2014 12:50:41 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="edu.uv.modelo.pojos.admproy.Datosevaluacion" table="datosevaluacion" catalog="administracion">
+        <id name="idDatosEvaluacion" type="int">
+            <column name="idDatosEvaluacion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="datosactoacademico" class="edu.uv.modelo.pojos.admproy.Datosactoacademico" fetch="select">
+            <column name="DatosActoAcademico_idActoAcademico" not-null="true" />
+        </many-to-one>
+        <property name="nomProfesor" type="string">
+            <column name="nomProfesor" length="100" not-null="true" />
+        </property>
+        <property name="medio" type="string">
+            <column name="medio" length="15" not-null="true" />
+        </property>
+        <property name="capacidad" type="string">
+            <column name="capacidad" length="15" not-null="true" />
+        </property>
+        <property name="conocimiento" type="string">
+            <column name="conocimiento" length="15" not-null="true" />
+        </property>
+        <property name="usoApoyos" type="string">
+            <column name="usoApoyos" length="15" not-null="true" />
+        </property>
+        <property name="habilidadpedagogica" type="string">
+            <column name="habilidadpedagogica" length="15" not-null="true" />
+        </property>
+        <property name="manejoTiempo" type="string">
+            <column name="manejoTiempo" length="15" not-null="true" />
+        </property>
+        <property name="conceptos" type="string">
+            <column name="conceptos" length="15" not-null="true" />
+        </property>
+        <property name="congruencia" type="string">
+            <column name="congruencia" length="15" not-null="true" />
+        </property>
+        <property name="calidadMaterial" type="string">
+            <column name="calidadMaterial" length="15" not-null="true" />
+        </property>
+        <property name="condicionAula" type="string">
+            <column name="condicionAula" length="15" not-null="true" />
+        </property>
+        <property name="servicioSanitario" type="string">
+            <column name="servicioSanitario" length="15" not-null="true" />
+        </property>
+        <property name="personalEncargado" type="string">
+            <column name="personalEncargado" length="15" not-null="true" />
+        </property>
+        <property name="calidadImpresion" type="string">
+            <column name="calidadImpresion" length="15" not-null="true" />
+        </property>
+        <property name="congruenciaRevisado" type="string">
+            <column name="congruenciaRevisado" length="15" not-null="true" />
+        </property>
+        <property name="calificacionGeneral" type="int">
+            <column name="calificacionGeneral" not-null="true" />
+        </property>
+        <property name="calificacionDesempe&#241;o" type="int">
+            <column name="calificacionDesempe&#241;o" not-null="true" />
+        </property>
+        <property name="elevarNivelCurso" type="string">
+            <column name="elevarNivelCurso" length="60" not-null="true" />
+        </property>
+        <property name="curso" type="int">
+            <column name="curso" not-null="true" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" length="60" not-null="true" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
