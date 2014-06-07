@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 27/05/2014, 01:01:15 PM
-    Author     : mitol_000
+    Author     : JesusRodriguez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,6 +11,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>INICIO SESION</title>
     </head>
+    <%    if ((session.getAttribute("user") != null)) {
+        request.getRequestDispatcher("principal.jsp").forward(request, response);
+    } 
+    if (session.getAttribute("estado")==null) {
+               session.setAttribute("estado", "");
+            } 
+%>
     <body>
         <h1>CONTROL DE CURSOS FEI </h1>
         <h2>UNIVERSIDAD VERACRUZANA</h2>
